@@ -128,7 +128,8 @@ def Alg_Mapping_Cipher(text, mapping):
 
 
 def process_input(command):
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description='Encrypt text using various cipher algorithms.')
     parser.add_argument('cipher_type', choices=[
                         "additive-cipher", "multiplicative-cipher", "affine-cipher", "mapping-cipher"])
     parser.add_argument('-text', required=True)
@@ -157,19 +158,33 @@ def process_input(command):
 
 
 def main():
+    print("\nWelcome to the Cipher Algorithms program!")
+    print("This program supports the following ciphers:")
+    print("1. Additive Cipher")
+    print("2. Multiplicative Cipher")
+    print("3. Affine Cipher")
+    print("4. Mapping Cipher")
+    print("\nUsage examples:")
+    print('* additive-cipher -text "HELP me" -key 1')
+    print('* multiplicative-cipher -text "danger" -key 3')
+    print('* affine-cipher -text "example" -a 5 -b 8')
+    print('* mapping-cipher -text "hello" -mapping "phqgiumeaylnofdxjkrcvstzwb"')
+    print("\nPlease enter the number of commands followed by the ")
+
     n = int(input().strip())
     results = []
 
-    for _ in range(n):
-        command = input().strip()
+    for i in range(n):
+        command = input(f"{i+1} : ").strip()
         try:
             result = process_input(command)
             results.append(result)
         except Exception as e:
             results.append(str(e))
 
-    for result in results:
-        print(result)
+    print("\n------Result------")
+    for result in range(len(results)):
+        print(f"[{result+1}] : ", results[result])
 
 
 if __name__ == "__main__":
