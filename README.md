@@ -19,6 +19,7 @@ This Python project implements four types of cipher algorithms for encrypting te
   - [Example 1](#example-1)
   - [Example 2](#example-2)
 - [Installation](#installation)
+- [Usage](#usage)
 
 
 ## Additive Cipher
@@ -85,5 +86,24 @@ JANSMZ
 To run this project, ensure you have Python installed on your system. Clone the repository and navigate to the project directory:
 
 ```bash
-git clone https://github.com/amirbaa1/Cipher_Algorithms.git
+git clone https://github.com/yourusername/cipher-algorithms.git
 cd cipher-algorithms
+```
+
+# Usage
+To execute the ciphers, you need to run the Python script from the command line. Here is how you can do it:
+
+1. Open your terminal or command prompt.
+2. Navigate to the directory where you have cloned the repository.
+3. Run the script using the following command:
+
+```bash
+python main.py
+```
+You will then be prompted to input the number of commands you want to execute and the commands themselves. For example:
+
+```
+additive-cipher -text "HELP me" -key 1
+multiplicative-cipher -text "danger" -key 3
+```
+This will output the encrypted text using the specified ciphers.
