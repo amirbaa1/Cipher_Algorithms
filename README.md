@@ -86,7 +86,7 @@ JANSMZ
 To run this project, ensure you have Python installed on your system. Clone the repository and navigate to the project directory:
 
 ```bash
-git clone https://github.com/yourusername/cipher-algorithms.git
+git clone https://github.com/amirbaa1/Cipher_Algorithms.git
 cd cipher-algorithms
 ```
 
