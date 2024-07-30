@@ -98,7 +98,7 @@ To execute the ciphers, you need to run the Python script from the command line.
 3. Run the script using the following command:
 
 ```bash
-python main.py
+python Cipher.py
 ```
 You will then be prompted to input the number of commands you want to execute and the commands themselves. For example:
 
