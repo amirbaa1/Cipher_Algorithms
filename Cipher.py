@@ -2,6 +2,7 @@ import argparse
 import shlex
 import sys
 
+
 def negasht(code):
     dict_str = {
         "A": 0,
@@ -169,28 +170,34 @@ def main():
     print('* multiplicative-cipher -text "danger" -key 3')
     print('* affine-cipher -text "example" -a 5 -b 8')
     print('* mapping-cipher -text "hello" -mapping "phqgiumeaylnofdxjkrcvstzwb"')
-    print("\nPlease enter the number of commands followed by the ")
 
-    n = int(input().strip())
-    results = []
+    while True:
+        print("\nPlease enter the number or exit with 0 : ")
+        user_input = input().strip()
+        if user_input == '0':
+            break
+        elif user_input == '-help':
+            print('* additive-cipher -text "HELP me" -key 1')
+            print('* multiplicative-cipher -text "danger" -key 3')
+            print('* affine-cipher -text "example" -a 5 -b 8')
+            print('* mapping-cipher -text "hello" -mapping "phqgiumeaylnofdxjkrcvstzwb"')
 
-    for i in range(n):
-        command = input(f"{i+1} : ").strip()
-        try:
-            result = process_input(command)
-            results.append(result)
-        except Exception as e:
-            results.append(str(e))
+        else:
+            n = int(user_input)
+            results = []
 
-    print("\n------Result------")
-    for result in range(len(results)):
-        print(f"[{result+1}] : ", results[result])
+            for i in range(n):
+                command = input(f"{i+1} : ").strip()
+                try:
+                    result = process_input(command)
+                    results.append(result)
+                except Exception as e:
+                    results.append(str(e))
+
+            print("\n------Result------")
+            for result in range(len(results)):
+                print(f"[{result+1}] : ", results[result])
 
 
 if __name__ == "__main__":
     main()
-    if len(sys.argv) != 2:
-        print("Usage: python cipher.py <text>")
-        sys.exit(1)
-    text = sys.argv[1]
-    print(process_input(text))
