@@ -1,6 +1,6 @@
 import argparse
 import shlex
-
+import sys
 
 def negasht(code):
     dict_str = {
@@ -189,3 +189,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+    if len(sys.argv) != 2:
+        print("Usage: python cipher.py <text>")
+        sys.exit(1)
+    text = sys.argv[1]
+    print(process_input(text))
